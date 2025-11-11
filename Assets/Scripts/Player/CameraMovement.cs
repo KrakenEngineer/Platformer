@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Camera))]
 public sealed class CameraMovement : MonoBehaviour
 {
-    [SerializeField] private Camera _camera;
+    private Camera _camera;
     [SerializeField] private Player _target;
 
     [SerializeField] private float _depth;
@@ -14,25 +14,15 @@ public sealed class CameraMovement : MonoBehaviour
     private void Start() => _camera = GetComponent<Camera>();
 
     private void Update()
-    {
-        MoveTo(_target.transform);
-        ChangeZoom(Input.GetAxis("MouseScrollWheel"));
-    }
+	{
+		float x = _target.transform.position.x;
+		float y = _target.transform.position.y;
+		var position = new Vector3(x, y, _depth);
+		transform.position = position;
 
-    private void MoveTo(Transform target)
-    {
-        float x = target.position.x;
-        float y = target.position.y;
-        var position = new Vector3(x, y, _depth);
-
-        transform.position = position;
-    }
-
-    private void ChangeZoom(float change)
-    {
-        float resultChange = -change * _zoomSpeed * _camera.orthographicSize;
-        resultChange += _camera.orthographicSize;
-        resultChange = Mathf.Clamp(resultChange, _minZoom, _maxZoom);
-        _camera.orthographicSize = resultChange;
-    }
+		float resultChange = -Input.GetAxis("MouseScrollWheel") * _zoomSpeed * _camera.orthographicSize;
+		resultChange += _camera.orthographicSize;
+		resultChange = Mathf.Clamp(resultChange, _minZoom, _maxZoom);
+		_camera.orthographicSize = resultChange;
+	}
 }

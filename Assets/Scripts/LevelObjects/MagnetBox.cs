@@ -8,8 +8,6 @@ public sealed class MagnetBox : Magnet
 {
     private Rigidbody2D _rigidbody;
 
-    [SerializeField] private float _repelForce;
-
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -17,7 +15,7 @@ public sealed class MagnetBox : Magnet
 
     public override void Push(Vector2 position)
     {
-        _rigidbody.AddForce(position * _repelForce);
+        _rigidbody.AddForce(position);
     }
 
     public override bool IsActive()

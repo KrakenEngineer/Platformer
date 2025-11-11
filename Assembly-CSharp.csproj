@@ -59,15 +59,27 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2023.1.16f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\LevelObjects\LaserSensor.cs" />
-    <Compile Include="Assets\Scripts\Level\EventHandler.cs" />
-    <Compile Include="Assets\Scripts\LevelObjects\Booster.cs" />
-    <Compile Include="Assets\Scripts\Abstracts.cs" />
+    <Compile Include="Assets\Scripts\Triggers\EventTrigger.cs" />
+    <Compile Include="Assets\Scripts\LevelObjects\Forces\Booster.cs" />
+    <Compile Include="Assets\Scripts\Main\GlobalData.cs" />
+    <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\LevelObjects\Sensors\LaserSensor.cs" />
+    <Compile Include="Assets\Scripts\LevelObjects\Forces\EMstream.cs" />
+    <Compile Include="Assets\Scripts\Triggers\CompleteTrigger.cs" />
+    <Compile Include="Assets\Scripts\LevelObjects\Portals\PortalPair.cs" />
+    <Compile Include="Assets\Scripts\Main\Level.cs" />
+    <Compile Include="Assets\Scripts\Other\VectorUtilities.cs" />
+    <Compile Include="Assets\Scripts\Other\Saving.cs" />
+    <Compile Include="Assets\Scripts\Other\EventHandler.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Player\CameraMovement.cs" />
+    <Compile Include="Assets\Scripts\Other\Abstracts.cs" />
     <Compile Include="Assets\Scripts\LevelObjects\MagnetBox.cs" />
-    <Compile Include="Assets\Scripts\Utilities.cs" />
-    <Compile Include="Assets\Scripts\Level\Level.cs" />
+    <Compile Include="Assets\Scripts\Triggers\StopTrigger.cs" />
+    <Compile Include="Assets\Scripts\Main\Scene.cs" />
+    <Compile Include="Assets\Scripts\UI\LevelLoadingButton.cs" />
+    <Compile Include="Assets\Scripts\LevelObjects\Portals\Portal.cs" />
+    <Compile Include="Assets\Scripts\LevelObjects\Forces\ConstantMagnet.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -765,11 +777,11 @@
     <Reference Include="Unity.2D.Common.Path.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Path.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Common.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Common.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
@@ -813,6 +825,9 @@
     <Reference Include="Unity.2D.Aseprite.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Aseprite.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Toolchain.Win-x86_64-Linux-x86_64">
+      <HintPath>Library\ScriptAssemblies\Unity.Toolchain.Win-x86_64-Linux-x86_64.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
@@ -825,6 +840,9 @@
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Sysroot.Linux_x86_64">
+      <HintPath>Library\ScriptAssemblies\Unity.Sysroot.Linux_x86_64.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -834,11 +852,11 @@
     <Reference Include="Unity.2D.Psdimporter.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.InternalAPIEditorBridge.001">
-      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.2D.Animation.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InternalAPIEditorBridge.001">
+      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
@@ -866,6 +884,9 @@
     </Reference>
     <Reference Include="Unity.InternalAPIEngineBridge.001">
       <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.SysrootPackage.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.SysrootPackage.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
